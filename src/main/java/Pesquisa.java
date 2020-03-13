@@ -1,6 +1,3 @@
-import static org.junit.Assert.assertEquals;
-
-import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -8,24 +5,20 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class Pesquisa {
-	
-	TakeScreenShotFunction screenShotFunction = new TakeScreenShotFunction();
-	WebDriver driver = new ChromeDriver();
-	@Before
-	public void inicializa()
-	{
-		System.setProperty("webdriver.chrome.driver","C:\\chromedriver_win32\\chromedriver.exe");
-		String url = "https://www.floresonline.com.br/";
-		driver.manage().window().maximize();
-		driver.get(url);
-	}
 	
 	@Test
 	public void CT029() throws Exception
 	{
+		System.setProperty("webdriver.chrome.driver","C:\\chromedriver_win32\\chromedriver.exe");
+		TakeScreenShotFunction screenShotFunction = new TakeScreenShotFunction();
+		WebDriver driver = new ChromeDriver();
+		
+		String url = "https://www.floresonline.com.br/";
+		driver.manage().window().maximize();
+		driver.get(url);
+		
 		String className = Thread.currentThread().getStackTrace()[1].getMethodName();
 		int count = 0;
 		//tirando print da tela ativa
