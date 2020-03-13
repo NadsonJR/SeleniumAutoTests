@@ -24,7 +24,7 @@ public class Login {
 		// Maximize window
 		driver.manage().window().maximize();
 		driver.get(url);
-		String className = this.getClass().getName();
+		String className = Thread.currentThread().getStackTrace()[1].getMethodName();
 		System.out.println(className);
 		System.out.println(driver.getTitle());
 		int count = 0;

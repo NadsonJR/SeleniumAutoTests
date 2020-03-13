@@ -24,12 +24,18 @@ public class TakeScreenShotFunction {
 				diretorio.mkdir();
 				System.out.println("Diretório criado com sucesso!");
 			}
+			File diretorioTeste = new File("C:\\Evidências\\"+TestCase+"\\");
+			if(!diretorioTeste.isDirectory()) {
+				diretorioTeste.mkdir();
+				System.out.println("Diretório criado com sucesso!");
+			}
 			
             Thread.sleep(120); 
             Robot r = new Robot(); 
   
             // It saves screenshot to desired path 
-            String path = diretorio + TestCase + count + ".jpg"; 
+            String path = diretorioTeste +"\\"+ TestCase + count + ".jpg";
+            System.out.println(path);
   
             // Used to get ScreenSize and capture image 
             Rectangle capture = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()); 
