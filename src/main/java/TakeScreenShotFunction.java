@@ -16,10 +16,10 @@ import com.sun.jna.platform.FileUtils;
 
 public class TakeScreenShotFunction {
 
-	public void takeSaveScreenShot(int count) throws Exception {
+	public void takeSaveScreenShot(int count , String TestCase) throws Exception {
 		
 		try { 
-			File diretorio = new File("C:\\Evidências");
+			File diretorio = new File("C:\\Evidências\\");
 			if(!diretorio.isDirectory()) {
 				diretorio.mkdir();
 				System.out.println("Diretório criado com sucesso!");
@@ -29,7 +29,7 @@ public class TakeScreenShotFunction {
             Robot r = new Robot(); 
   
             // It saves screenshot to desired path 
-            String path = diretorio +"\\CT001 - " + count + ".jpg"; 
+            String path = diretorio + TestCase + count + ".jpg"; 
   
             // Used to get ScreenSize and capture image 
             Rectangle capture = new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()); 

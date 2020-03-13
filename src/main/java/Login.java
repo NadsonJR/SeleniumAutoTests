@@ -13,9 +13,9 @@ import java.io.File;
 
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class CT001 {
-	
-	public static void main(String[]args) throws Exception {
+public class Login {
+	@Test
+	public void CT001_teste() throws Exception {
 
 		System.setProperty("webdriver.chrome.driver","C:\\chromedriver_win32\\chromedriver.exe");
 		TakeScreenShotFunction screenShotFunction = new TakeScreenShotFunction();
@@ -24,11 +24,13 @@ public class CT001 {
 		// Maximize window
 		driver.manage().window().maximize();
 		driver.get(url);
+		String className = this.getClass().getName();
+		System.out.println(className);
 		System.out.println(driver.getTitle());
 		int count = 0;
 
 		// Funtion Take a Screenshot
-		screenShotFunction.takeSaveScreenShot(count);
+		screenShotFunction.takeSaveScreenShot(count, className);
 		Thread.sleep(1500);
 		count++;
 
@@ -46,7 +48,7 @@ public class CT001 {
 		System.out.println("Password Preenchido");
 
 		// Funtion Take a Screenshot
-		screenShotFunction.takeSaveScreenShot(count);
+		screenShotFunction.takeSaveScreenShot(count, className);
 		count++;
 		Thread.sleep(1500);
 
@@ -55,7 +57,7 @@ public class CT001 {
 		
 		Thread.sleep(1500);
 		// Funtion Take a Screenshot
-		screenShotFunction.takeSaveScreenShot(count);
+		screenShotFunction.takeSaveScreenShot(count, className);
 		count++;
 		Thread.sleep(1500);
 
